@@ -1,0 +1,100 @@
+@use '../../styles/vars' as v;
+
+nav {
+  background-color: rgba(17,17,17,0.9);
+  box-shadow: 0px 0px 10px #000;
+  height:8%;
+  padding: 2.5rem;
+  display:flex;
+  justify-content: space-between;
+  z-index: 10;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  transition: all .3s ease-out;
+  font-family: 'Quicksand', sans-serif;
+
+  &:hover {
+    background-color: v.$black;
+    transition: all .3s ease-out;
+  }
+}
+
+.navbar-logo {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  position:relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: rgba(17,17,17,0.9);
+  border: 2px solid rgba(17,17,17,0.9);
+  box-shadow: 0px 0px 2px v.$black;
+  left:4rem;
+  top: -1rem;
+
+  .logo-img{
+    width:6rem;
+  }
+}
+
+.nav-links {
+  color: white;
+  text-decoration: none;
+  width:50%;
+  display:flex;
+  justify-content:flex-end;
+  align-items: center;
+  list-style:none;
+  letter-spacing: 2px;
+  text-transform:uppercase;
+
+  &:hover{
+    transition: all 0.3s ease-out;
+  }
+}
+
+.navStyle {
+  margin:0 1rem;
+  padding-right: 1rem;
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    text-shadow:0px 0px 2px #FFF;
+    transition: all 0.3s ease-out;
+  }
+}
+
+.tululu {
+  background: linear-gradient(to right, #0D2340, #071425);
+  border:none;
+  box-shadow:0px 0px 4px #000;
+  font-size:1rem;
+  text-transform:uppercase;
+  padding:0.8rem;
+  border-radius:3px;
+  color:#FFF;
+  text-shadow:0px 0px 2px v.$black;
+  transition: all 0.5s ease-out;
+  font-family: 'Quicksand', sans-serif;
+
+  &:hover{
+    font-weight:bold;
+    background: #D5AD44;
+    border: 1px solid #D5AD44;
+    transition: all 0.5s ease-out;
+  }
+}
+
+@media (max-width:1000px) {
+  .navbar-logo {
+    left: 1rem;
+    width: 50px;
+    height: 50px;
+
+    .logo-img{
+      width:3.5rem;
+    }
+  }
+}

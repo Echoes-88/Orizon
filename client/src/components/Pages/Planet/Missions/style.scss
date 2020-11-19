@@ -1,0 +1,279 @@
+@use '../../../../styles/_vars.scss' as v;
+
+.missions__body {
+  position: absolute;
+  scroll-behavior: smooth;
+  white-space: pre-wrap;
+}
+
+.missions__body__container {
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  right: -70%;
+  background-color: scale-color(v.$dark-blue, $alpha: -10%);
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  max-height: 50%;
+  margin-top: 50%;
+  z-index: 30;
+  opacity: 0; 
+
+  border-radius: 25px;
+  transition: opacity 1s ease;
+  // opacity: calc( var(--visible-y) * 0.8);
+}
+
+// .missions__body__container:target {
+//   padding-top: 100px;
+//   position: relative;
+//   top: -100px;
+//   margin-bottom: -100px;
+// }
+
+.mission_line {
+  border-bottom: 2px solid v.$yellow;
+  width: 80%;
+  margin: 1rem auto;
+}
+
+.missions__body__container:hover {
+  border-bottom: 4px solid v.$yellow;
+  border-right: 2px solid v.$yellow;
+  transition: all 0.3s ease-out;
+}
+
+
+.missions__description {
+  text-align: justify;
+padding: 1.2rem;  
+color: v.$white;
+font-size: 0.9rem;
+}
+
+.missions__description__title {
+  font-family: 'Kosugimaru', Arial, sans-serif;
+  line-height: 1.3;
+  color: v.$yellow;
+  padding: 0.2rem;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 2vh;
+  font-size: 1.1rem;
+}
+
+
+.missions__image__container {
+  overflow: hidden;
+  height: 20vh;
+  border-bottom:#1a1a1a solid 3px;
+}
+
+.missions__image {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+
+
+.missions__description__goal {
+  white-space: pre-wrap;
+}
+
+.missions__body__dot__container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: -4%;
+}
+
+.missions__body__dot {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid transparent;
+  border-radius: 64px;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 0;
+  line-height: .5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+#EL3-17 {
+  margin-bottom: 25%;
+}
+
+.missions__body__dot::after {
+  content: "";
+  display: block;
+  background: white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.55);
+  width: .75rem;
+  height: .75rem;
+  border-radius: 64px;
+}
+
+.missions__body__dot:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.missions__body__dot__body {
+  position: relative;
+  width: 40%;
+  height: 40%;
+  left: 55%;
+  margin-left: -25%;
+}
+
+.dot_name {
+  font-family: 'Kosugimaru', Arial, sans-serif;
+  line-height: 1.3;
+  color: v.$yellow;
+  font-weight: bold;
+  font-size: 0.9rem;
+  background-color: scale-color(v.$dark-blue, $alpha: -10%);
+  position: absolute;
+  display: block;
+  top: -4rem;
+  left: 2rem;
+  height: 4.5rem;
+  width: 10rem;
+  text-align: center;
+  -webkit-box-shadow: 7px 7px 16px 1px rgba(0,0,0,0.89);
+  -moz-box-shadow: 7px 7px 16px 1px rgba(0,0,0,0.89);
+  box-shadow: 7px 7px 16px 1px rgba(0,0,0,0.89);
+  z-index: 99;
+}
+
+.id-1 {
+  top: 4%;
+  left: 35%;
+}
+
+.id-2 {
+  top: 15%;
+  left: 24%;
+}
+
+.id-3 {
+  top: 30%;
+  left: 30%;
+}
+
+.id-4 {
+  top: 58%;
+  left: 59%;
+}
+
+.id-5 {
+  top: 32%;
+  left: 80%;
+}
+
+.id-6 {
+  top: -5%;
+  left: 62%;
+}
+
+.id-7 {
+  top: 19%;
+  left: 56%;
+}
+
+.id-8 {
+  top: 90%;
+  left: 26%;
+}
+
+.id-9 {
+  top: 56%;
+  left: 34%;
+}
+
+.id-10 {
+  top: 72%;
+  left: 74%;
+}
+
+.id-11 {
+  top: 55%;
+  left: 22%;
+}
+
+.id-12 {
+  top: 20%;
+  left: 74%;
+}
+
+.id-13 {
+  top: -22%;
+  left: 47%;
+}
+
+.id-14 {
+  top: 33%;
+  left: 44%;
+}
+
+.id-15 {
+  top: 98%;
+  left: 56%;
+}
+
+.id-16 {
+  top: 96%;
+  left: 42%;
+}
+
+.id-17 {
+  top: 74%;
+  left: 52%;
+}
+
+@media (max-width: 1000px) {
+  .missions__body__dot__body{
+    display: none;
+  }
+
+  .missions__body__container {
+    width: 80%;
+    left: 10%;
+    z-index: 5;
+  }
+} 
+
+@media (max-width: 600px) {
+  .missions__body__container {
+    width: 90%;
+    left: 5%;
+    opacity: 1;
+  }
+
+.missions__description__title {
+  font-size: 0.9rem;
+  padding-bottom: 1vh;
+}
+
+.missions__description {
+padding: 1rem;  
+font-size: 0.8rem;
+}
+
+.missions__image__container {
+  height: 15vh;
+}
+
+.mission_line {
+  border-bottom: 1px solid v.$yellow;
+  width: 80%;
+  margin: 0.6rem auto;
+}
+
+}

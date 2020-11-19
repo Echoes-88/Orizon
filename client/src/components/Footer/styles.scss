@@ -1,0 +1,47 @@
+@use '../../styles/vars' as v;
+
+footer {
+  margin: 0;
+  position: fixed;
+  bottom:0;
+  background-color: rgba(17, 17, 17, 0.7);
+  box-shadow: 0px 0px 10px v.$black;
+  padding: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  &:hover {
+    background-color: v.$black;
+    transition: all .3s ease-out;
+  }
+}
+
+.wrap {
+  display:flex;
+  justify-content: space-around;
+}
+
+.title  {
+  font-size: 0.8rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.2s ease-out;
+  margin: 0 0.5rem;
+
+  &:hover{
+    text-shadow:0px 0px 2px #FFF;
+    transition: all 0.2s ease-out;
+  }
+}
+
+@media (max-width:1000px) {
+  footer{
+    display:inline-block;
+    padding:1rem;
+  }
+  .wrap {
+    display: block;
+  }
+}

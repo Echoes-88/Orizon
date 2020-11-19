@@ -1,0 +1,30 @@
+
+.connexion {
+    max-width: 35vh;
+    min-height: 10vh;
+    margin: 10vh auto;
+}
+.signup_title {
+  font-size: 1.8rem;
+  color: #d5ad44;
+  font-family: Kosugimaru;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-transform:uppercase;
+ }
+
+button.validation_Buttons{
+  width: 40%;
+  background-color: #c09933;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 700;
+  font-size: 100%;
+  text-shadow: 0 0 2px #1a3e6a;
+  box-shadow: 0 0 2px #000;
+  padding: 2%;
+  margin: 2% 0 2% 60%;
+  text-align: center;
+}

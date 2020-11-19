@@ -1,0 +1,85 @@
+@use '../../../styles/_vars.scss' as  v;
+
+
+.legalmentions {
+  width: 60%;
+  margin: 4rem auto;
+  color: v.$white;
+  transition: all 0.3s ease-out;
+  
+&-underline {
+  border-bottom: v.$yellow 3px solid;
+  width:40%;
+  margin: 0.5rem auto;
+
+}
+
+
+  &-bigtitle {
+    text-align: center;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-family: 'Kosugimaru', Arial, sans-serif;
+
+  }
+
+  &-section {
+    width: 80%;
+    margin: 2rem auto;
+    background-color:v.$blue;
+    border-radius: .4rem;
+    padding:1rem;
+    box-shadow: .5rem 2px .5rem 2px rgba(0,0,0,.1);
+    transition: all 0.3s ease-out;
+  }
+  &-section:hover {
+    border-bottom: v.$yellow 5px solid;
+    transition: all 0.3s ease-out;
+  }
+
+  &-section p {
+    text-align: justify;
+    font-size: 1rem;
+    padding: 0.5rem 1rem 1rem 0;
+    word-break: wrap;
+
+
+  }
+
+  &-smalltitle {
+text-transform: uppercase;
+font-size: 1.2rem;
+transition: all 0.3s ease-out;
+
+  }
+
+  &-smalltitle:hover {
+    letter-spacing: 1px;
+    transition: all 0.3s ease-out;
+    color: v.$yellow;
+
+  }
+}
+
+@media (max-width: 1000px) {
+
+  .legalmentions {
+    width: 80%;
+
+  &-section {
+    width: 100%;
+    padding: 1rem;
+    letter-spacing: 2px;
+    transition: all 0.3s ease-out;
+  }
+  &-bigtitle {
+    font-size: 2.5rem;
+  }
+
+  &-section p {
+    font-size: 0.9rem;
+    padding: 0.2rem;
+  }
+  }
+
+}

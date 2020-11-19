@@ -1,0 +1,58 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(to right, #0F0F0F, #020202, #030303, #000);
+  overflow: overlay;
+  margin-top: 4%;
+}
+// background: linear-gradient(to right, #B294FF, #57E6E6, #FEFFB8, #57E6E6, #B294FF, #57E6E6);
+// .root {
+//   width: 100%;
+//   height: 100%;
+// }
+// .app {
+//   width: 100%;
+//   height: 100%;
+// }
+
+
+.logo {
+  width: 10%;
+}
+
+.navbar {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+// == Signup Form appearance 
+.signup{
+  max-width: 40vh;
+  min-height: 10vh;
+  margin: 10vh auto;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 1%;
+  margin: 1%;
+}
+
+.bloublou {
+  color: white;
+}
+
+// --------------------
+

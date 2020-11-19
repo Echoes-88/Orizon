@@ -1,0 +1,30 @@
+.main{
+  padding:4rem;
+
+}
+// == Signup Form appearance 
+.signup{
+  max-width: 40vh;
+  min-height: 10vh;
+  margin: 10vh auto;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 1%;
+  margin: 1%;
+}
+
+.bloublou {
+  color: white;
+}
+
+// --------------------
+
+@media (max-width:1000px) {
+  .main{
+    padding:4rem 0;
+  }
+}
+

@@ -1,0 +1,60 @@
+nav {
+  background-color: rgba(17, 17, 17, 0.5);
+  box-shadow: 0px 0px 10px #000;
+  height:8%;
+  padding: 2%;
+  display:flex;
+  justify-content: space-between;
+  z-index: 90;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+.navbar-logo {
+  color: #fff;
+  margin-left: 2%;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  color: white;
+  text-decoration: none;
+  width:50%;
+  display:flex;
+  justify-content:flex-end;
+  align-items: center;
+  list-style:none;
+  letter-spacing: 2px;
+  text-transform:uppercase;
+  &:hover{
+    transition: all 0.2s ease-out;
+  }
+}
+
+.navStyle {
+  margin:0 2%;
+  padding-right: 5%;
+  transition: all 0.2s ease-out;
+}
+
+.navStyle:hover {
+  text-shadow:0px 0px 2px #FFF;
+  transition: all 0.2s ease-out;
+}
+
+.tululu {
+  background: linear-gradient(to right, #2F3843, #414141);
+  border:none;
+  box-shadow:0px 0px 4px #000;
+  font-size:1rem;
+  text-transform:uppercase;
+  padding:2%;
+  border-radius:3px;
+  color:#FFF;
+  text-shadow:0px 0px 2px #1a1a1a;
+}

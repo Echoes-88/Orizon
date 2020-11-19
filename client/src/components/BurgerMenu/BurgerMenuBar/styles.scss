@@ -1,0 +1,75 @@
+@use '../../../styles/vars' as v;
+
+nav.test2{
+  height:100%;
+  background-color: #0D2340;
+  box-shadow: 0 0 10px #000;
+  position: fixed;
+  top:0;
+  left:0;
+  width:70%;
+  max-width:400px;
+  z-index:100;
+  display: flex;
+  justify-content: space-evenly;
+  transition: transform 0.5s ease-out;
+  text-align:right;
+}
+
+.navLinks_burger{
+  margin:1rem;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  color:v.$white;
+  width: 100%;
+  font-size: 1.3rem;
+  font-family: 'Quicksand', sans-serif;
+}
+
+
+.sinup_button {
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(to right, #0D2340, #071425);
+  border:none;
+  box-shadow:0px 0px 4px #000;
+  font-size:1rem;
+  text-transform:uppercase;
+  padding:0.8rem;
+  border-radius:3px;
+  color:#FFF;
+  text-shadow:0px 0px 2px v.$black;
+  transition: all 0.5s ease-out;
+  width: 100%;
+  margin-left: 2rem;
+  margin-top: 0.5rem;
+
+  &:hover{
+    font-weight:bold;
+    background: #D5AD44;
+    border: 1px solid #D5AD44;
+    transition: all 0.5s ease-out;
+  }
+}
+
+.blue_button {
+  background: linear-gradient(to right, #0D2340, #071425);
+  border:none;
+  box-shadow:0px 0px 4px #000;
+  font-size:1rem;
+  text-transform:uppercase;
+  padding:0.8rem;
+  border-radius:3px;
+  color:#FFF;
+  text-shadow:0px 0px 2px v.$black;
+  transition: all 0.5s ease-out;
+  width: 100%;
+  margin-left: 0.9rem;
+  margin-top: 1rem;
+
+  &:hover{
+    font-weight:bold;
+    background: #D5AD44;
+    border: 1px solid #D5AD44;
+    transition: all 0.5s ease-out;
+  }
+}

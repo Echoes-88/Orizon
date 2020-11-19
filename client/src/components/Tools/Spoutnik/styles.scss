@@ -1,0 +1,164 @@
+@use '../../../styles/_vars.scss' as v;
+
+.spoutnik {
+  position: fixed;
+  top: 57%;
+  left: 13%;
+  
+
+  &-speaks {
+    width: 20rem;
+    height: auto;
+    position: absolute;
+    top: -60%;
+    left: 105%;
+    border-radius: 50px;
+    padding: 1.5rem;
+    background-color: scale-color(v.$dark-blue, $alpha: -10%);
+    font-family: 'Roboto', Arial, sans-serif;
+    color: v.$white;
+    text-align: center;
+    font-size: 0.9rem;
+    z-index: 10;
+
+
+    &-p {
+      padding-top: 0.9rem;
+      line-height: 1.1rem;
+    }
+
+    &-big {
+      font-size: 1rem;
+      line-height: 1.2rem;
+    }
+  }
+
+
+  &-title {
+    font-family: 'Kosugimaru', Arial, sans-serif;
+    color: v.$yellow;
+    padding-bottom: 0.7rem;
+    font-size: 1.3rem;
+  }
+
+  &-speaks li {
+
+    transition: all 0.3s ease-out;
+
+  }
+  
+  &-speaks li:hover {
+    color: v.$yellow;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-out;
+
+
+  }
+
+
+  &-line {
+    border-bottom: 1px v.$yellow solid;
+    margin: 0 auto 0.4rem auto;
+    width: 80%;
+
+  }
+
+}
+
+.spoutnik> img{
+  cursor: pointer;
+  width: 17rem;
+}
+
+.strong {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.flexspoutnik {
+  display: flex;
+  justify-content: center;
+}
+.closeSpoutnik {
+  width: 2rem;
+  color: v.$yellow;
+  cursor: pointer;
+  padding: 0.1rem;
+  margin-bottom: 0.2rem;
+}
+
+.specialquiz {
+
+  position: absolute;
+  top: -115%;
+  left: 115%;
+
+}
+
+.signupin-position {
+
+  position: absolute;
+  top: -25%;
+  left: 100%;
+
+}
+
+.movedown {
+  position: absolute;
+  top: -18%;
+  left: 107%;
+
+}
+@media (max-width: 600px) {
+
+.spoutnik {
+  position: fixed;
+  top: 65%;
+  left: 10%;
+
+
+
+  &-speaks {
+    width: 14rem;
+    top: -260%;
+    left: 20%;
+    padding: 1.2rem;
+
+    &-p {
+      font-size: 0.7rem;
+    }
+
+  }
+
+  &-title {
+    font-family: 'Kosugimaru', Arial, sans-serif;
+    color: v.$yellow;
+    padding-bottom: 0.7rem;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+}
+.spoutnik> img{
+  cursor: pointer;
+  width: 6rem;
+}
+
+.specialquiz {
+
+  top: -350%;
+  left: 100%;
+  overflow: auto;
+  z-index: 99;
+
+}
+
+.signupin-position {
+
+  top: -150%;
+
+}
+
+
+}
+

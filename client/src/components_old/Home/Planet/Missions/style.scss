@@ -1,0 +1,171 @@
+.missions__body {
+  position: absolute;
+}
+
+.missions__body__container {
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  right: -70%;
+  background-color: #818288;
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  max-height: 60%;
+  margin-top: 5%;
+  z-index: 30;
+}
+
+
+.missions__description {
+  overflow: auto;
+  text-align: justify;
+  margin: 5%;
+}
+
+.missions__image__container {
+  overflow: hidden;
+  height: 20vh;
+  border-bottom:#1a1a1a solid 3px;
+}
+
+.missions__image {
+  width: 20vw;
+  height: auto;
+}
+
+.missions__description__title {
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 2vh;
+}
+
+.missions__body__dot__container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  margin-top: -4%;
+}
+
+.missions__body__dot {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid transparent;
+  border-radius: 64px;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 0;
+  line-height: .5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.missions__body__dot::after {
+  content: "";
+  display: block;
+  background: white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.55);
+  width: .75rem;
+  height: .75rem;
+  border-radius: 64px;
+}
+
+.missions__body__dot:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.missions__body__dot__body {
+  position: relative;
+  width: 40%;
+  height: 40%;
+  left: 55%;
+  margin-left: -25%;
+}
+
+.id-1 {
+  top: 2%;
+  left: 45%;
+}
+
+.id-2 {
+  top: 15%;
+  left: 24%;
+}
+
+.id-3 {
+  top: 30%;
+  left: 30%;
+}
+
+.id-4 {
+  top: 48%;
+  left: 66%;
+}
+
+.id-5 {
+  top: 32%;
+  left: 80%;
+}
+
+.id-6 {
+  top: -5%;
+  left: 62%;
+}
+
+.id-7 {
+  top: 20%;
+  left: 56%;
+}
+
+.id-8 {
+  top: 90%;
+  left: 26%;
+}
+
+.id-9 {
+  top: 48%;
+  left: 38%;
+}
+
+.id-10 {
+  top: 72%;
+  left: 74%;
+}
+
+.id-11 {
+  top: 55%;
+  left: 22%;
+}
+
+.id-12 {
+  top: 20%;
+  left: 74%;
+}
+
+.id-13 {
+  top: -13%;
+  left: 33%;
+}
+
+.id-14 {
+  top: 33%;
+  left: 52%;
+}
+
+.id-15 {
+  top: 98%;
+  left: 56%;
+}
+
+.id-16 {
+  top: 96%;
+  left: 42%;
+}
+
+.id-17 {
+  top: 74%;
+  left: 45%;
+}

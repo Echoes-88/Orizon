@@ -1,0 +1,26 @@
+
+.missions {
+  position: fixed;
+  top: 70%;
+  left: 10%;
+  z-index: 20;
+} 
+
+.planet_body {
+  align-items: center;
+  height: 25%;
+  width: 25%;
+  background-color: black;
+  border-radius: 50%;
+  text-align:center;
+  color:#FFF;
+  text-align: center;
+}
+
+.informations {
+  position: fixed;
+  top: 75%;
+  left: 10%;
+  z-index: 20;
+}
+
