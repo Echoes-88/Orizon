@@ -8,16 +8,16 @@ Orizon est une plateforme informative afin de rendre accessible aux ados la conq
 ### V1.0 (current version)
 
 Features :
-    - Create and manage account
-    - Access to informations about moon missions
-    - Access to a quiz about moon
-    - Access to news about space exploration
+-Create and manage account
+-Access to informations about moon missions
+-Access to a quiz about moon
+-Access to news about space exploration
 
 
 ### V2.0
 
 Features :
-    - Dashboard admin
-    - Access to mars and jupiter missions
-    - New quizzes
-    - Filter news (Source / theme)
+-Dashboard admin
+-Access to mars and jupiter missions
+-New quizzes
+-Filter news (Source / theme)
