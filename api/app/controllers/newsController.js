@@ -14,7 +14,7 @@ const handleQuizController = {
 
 		// LINK TO RSS
 		let scienceEtAvenirRss = await axios("https://www.sciencesetavenir.fr/espace/rss.xml");
-		let esaRss = await axios("https://www.esa.int/rssfeed/France");
+		// let esaRss = await axios("https://www.esa.int/rssfeed/France");
 		let lemondeRss = await axios("https://www.lemonde.fr/espace/rss_full.xml");
 
 		// FUNCTION TO TRANSFORM XML TO JSON
@@ -38,7 +38,7 @@ const handleQuizController = {
 		});
 
 		// FILTER ESA DATAS FROM JSON FILE
-		let esaJSON = await jsonifyDatas(esaRss);
+		/*let esaJSON = await jsonifyDatas(esaRss);
 
 		let esaDatas = esaJSON.rss.channel.item;
 
@@ -55,7 +55,7 @@ const handleQuizController = {
 			description = description.replace(/<\/?[^>]+(>|$)/g, "");
 			let source = "ESA";
 			formatedResult.push({title, description, link, img, pubDate, source});
-		});
+		});*/
 
 		// FILTER LE MONDE DATAS FROM JSON FILE
 		let lemondeJSON = await jsonifyDatas(lemondeRss);
