@@ -17,7 +17,7 @@ const getNewsDatas = (store) => (next) => (action) => {
           store.dispatch(waitingDatas(false));
         })
         .catch((error) => console.log(error))
-        .finally(() => console.log('finally'));
+        .finally();
       break;
     }
     default:
