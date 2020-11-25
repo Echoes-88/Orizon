@@ -12,7 +12,6 @@ const BurgerMenu = ({ logged }) => {
   const drawMenu = () => {
     if (!drawerToggle) {
       setDrawerToggle(true);
-      console.log('coucou');
     }
     else {
       setDrawerToggle(false);
