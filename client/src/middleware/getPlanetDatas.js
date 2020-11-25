@@ -13,14 +13,14 @@ const getPlanetDatas = (store) => (next) => (action) => {
           store.dispatch(savePlanetInfos(response.data));
         })
         .catch((error) => console.log(error))
-        .finally(() => console.log('finally'));
+        .finally();
 
       axios.get(`${adressIp}/api/crud/mission`)
         .then((response) => {
           store.dispatch(savePlanetMissions(response.data));
         })
         .catch((error) => console.log(error))
-        .finally(() => console.log('finally'));
+        .finally();
       break;
     }
     default:
