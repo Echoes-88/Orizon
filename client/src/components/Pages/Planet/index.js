@@ -48,9 +48,9 @@ const Planet = ({
     document.querySelectorAll('.specialquiz').forEach(
       (elementtwo) => {
         const heightContainer = elementtwo.getBoundingClientRect().height;
-        console.log(heightContainer);
+
         if (heightContainer < 400 && !elementtwo.classList.contains('movedown')) {
-          console.log('coucou');
+
           elementtwo.classList.add('movedown');
         }
         else if (heightContainer > 200 && elementtwo.classList.contains('movedown')) {
