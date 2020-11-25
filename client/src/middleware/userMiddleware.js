@@ -8,7 +8,6 @@ const userMiddleware = (store) => (next) => (action) => {
       axios.get(`${adressIp}/api/isLogged`, {
         withCredentials: true,
       }).then((response) => {
-        console.log(response.data)
         store.dispatch(handleCheckLogged(response.data));
         next(action);
       })
