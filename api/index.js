@@ -26,7 +26,7 @@ Object.defineProperty(session.Cookie.prototype, 'sameSite', {
   
 // Session
 app.use(session({
-	secret: "g5g48er7gergGER",
+	secret: process.env.APP_SECRET,
 	resave: true,
 	saveUninitialized: true,
 	cookie: {
