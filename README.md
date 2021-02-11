@@ -23,9 +23,6 @@ Features :
 Features :
 
   - Dashboard admin
-  
   - Access to mars and jupiter missions
-  
   - New quizzes
-  
   - Filter news (Source / theme)
