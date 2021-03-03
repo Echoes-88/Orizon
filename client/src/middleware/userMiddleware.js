@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { CHECK_IS_LOGGED, handleCheckLogged} from '../actions/user';
+import { CHECK_IS_LOGGED, handleCheckLogged, checkAvatar} from '../actions/user';
 import { adressIp } from '../config';
 
 const userMiddleware = (store) => (next) => (action) => {
@@ -9,6 +9,7 @@ const userMiddleware = (store) => (next) => (action) => {
         withCredentials: true,
       }).then((response) => {
         store.dispatch(handleCheckLogged(response.data));
+        store.dispatch(checkAvatar());
         next(action);
       })
         .catch((e) => {

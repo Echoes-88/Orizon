@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { adressIp } from '../config';
-import { UPDATE_PROFILE, updateSession } from '../actions/user';
+import { UPDATE_PROFILE, updateSession, CHECK_AVATAR, hasAvatar } from '../actions/user';
 
 axios.defaults.baseURL = adressIp;
 axios.defaults.withCredentials = true;
@@ -19,17 +19,30 @@ const sendProfile = (store) => (next) => (action) => {
         password: state.user.temporary.password,
       })
         .then((response) => {
-          console.log(response)
           store.dispatch(updateSession(response.data));
-        });
-
+        })
+        .catch((error) => console.log(error))
+        .finally(() =>
+        // This is an indication that the request was carried on, NOT THAT IT WAS SUCCESFUL
+          console.log('Requête pour récupérer les quizzes accomplie'));
       break;
     }
-    default: 
+
+    case CHECK_AVATAR: {
+      const state = store.getState();
+      const idString = state.user.session.idString;
+      console.log("idstring :", idString)
+      axios.get(`${adressIp}/${idString}`)
+        .then((response) => {
+          store.dispatch(hasAvatar());
+        })
+        .catch((error) => console.log(error))
+        .finally();break;
+      }
+    default:
       next(action);
-      break;
   }
-} 
+};
 
 export default sendProfile;
 

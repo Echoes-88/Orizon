@@ -1,6 +1,9 @@
+
 import axios from 'axios';
 import { adressIp } from '../config';
-import { GET_NEWS_DATAS, toggleNews, newsFromApi, waitingDatas } from '../actions/news';
+import { GET_NEWS_DATAS, 
+  toggleNews, newsFromApi 
+} from '../actions/news';
 
 const getNewsDatas = (store) => (next) => (action) => {
   switch (action.type) {
@@ -8,13 +11,10 @@ const getNewsDatas = (store) => (next) => (action) => {
       const state = store.getState();
       const { indexNews } = state.news;
 
-      store.dispatch(waitingDatas(true));
-
       axios.get(`${adressIp}/api/news/${indexNews}`)
         .then((response) => {
           store.dispatch(newsFromApi(response.data));
           store.dispatch(toggleNews());
-          store.dispatch(waitingDatas(false));
         })
         .catch((error) => console.log(error))
         .finally();
@@ -26,3 +26,4 @@ const getNewsDatas = (store) => (next) => (action) => {
 };
 
 export default getNewsDatas;
+

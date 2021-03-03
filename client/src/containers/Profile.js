@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Profile from '../components/Pages/Profile';
-import { updateProfile } from '../actions/user';
+import { updateProfile, checkAvatar } from '../actions/user';
 
 const mapStateToProps = (state) => ({
   username: state.user.temporary.username,
@@ -9,12 +9,17 @@ const mapStateToProps = (state) => ({
   email: state.user.temporary.email,
   idString: state.user.session.idString,
   quiz: state.user.session.quiz,
+  hasAvatar: state.user.hasAvatar,
 }); 
 
 const mapDispatchToProps = (dispatch) => ({
 
   updateProfile: () => {
     dispatch(updateProfile());
+  },
+
+  checkAvatar: () => {
+    dispatch(checkAvatar());
   }
 });
 

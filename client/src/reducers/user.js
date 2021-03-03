@@ -4,6 +4,7 @@ import {
   HANDLE_CHECK_LOGGED,
   UPDATE_SESSION_QUIZ,
   CLEAR_TEMP_USER_DATAS,
+  HAS_AVATAR
 } from '../actions/user';
 
 import { CHANGE_INPUT_VALUE } from '../actions/field';
@@ -13,6 +14,7 @@ import { LOGIN_HANDLER, LOGOUT_HANDLER } from '../actions/connexion';
 export const initialState = {
   logged: false,
   hasSignedUp: false,
+  hasAvatar: false,
   temporary: {
     username: '',
     lastname: '',
@@ -35,6 +37,11 @@ export const initialState = {
 
 const User = (state = initialState, action = {}) => {
   switch (action.type) {
+    case HAS_AVATAR:
+      return {
+        ...state,
+        hasAvatar: true,
+      };
     case LOGIN_HANDLER:
       return {
         ...state,

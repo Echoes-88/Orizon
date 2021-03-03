@@ -1,8 +1,7 @@
-import { NEWS_FROM_API, SET_NEW_INDEX, WAITING_DATAS } from '../actions/news';
+import { NEWS_FROM_API, SET_NEW_INDEX } from '../actions/news';
 
 export const initialState = {
   toggleNews: false,
-  waitingDatas: false,
   newsDatas: [],
   indexNews: 0,
   loading: true,
@@ -23,11 +22,6 @@ const data = (state = initialState, action = {}) => {
       return {
         ...state,
         indexNews: state.indexNews + 3,
-      };
-    case WAITING_DATAS:
-      return {
-        ...state,
-        waitingDatas: action.status,
       };
 
     default:

@@ -1,14 +1,16 @@
 // == React Import
-import React, { useState } from 'react';
-// import classNames from 'classnames';
+import React, { useState, useEffect } from 'react';
+
 import Field from '../../../containers/Field';
+
+import axios from 'axios';
 
 // == Import
 import './styles.scss';
 
 // == Profile page
 const Profile = ({
-  username, lastname, firstname, email, password, idString, quiz, updateProfile,
+  username, lastname, firstname, email, password, idString, quiz, updateProfile, checkAvatar, hasAvatar
 }) => {
 
   const handleOnSubmit = (event) => {
@@ -16,28 +18,15 @@ const Profile = ({
     updateProfile();
   };
 
-    const avatarUrl = 'http://localhost:5000/';
-    const uploadUrl = 'http://localhost:5000/api/upload/';
-
-    const linkConverter = (url) => {
-    let urlConverted;
-    if (url === avatarUrl) {
-      urlConverted = avatarUrl + idString;
-    } else {
-      urlConverted = url + idString;
-    }
-    return urlConverted;
-  };
-
   return (
     <div className="profilepage">
       <div className="profilepage__usercard">
         <div className="profilepage__infos"><div className="form_adjust">
-          {idString && (
-            <img className="profile_avatar" alt={username} src={linkConverter(avatarUrl)} />
+          {hasAvatar && (
+            <img className="profile_avatar" alt={username} src={`http://localhost:5000/${idString}`} />
           )}
  
-          <form method="POST" action={linkConverter(uploadUrl)} encType="multipart/form-data">
+          <form method="POST" action={`http://localhost:5000/api/upload/${idString}`} encType="multipart/form-data">
             <label className="fieldLabel"> Image de profil
               <input
                 type="file"
@@ -137,15 +126,3 @@ const Profile = ({
 };
 
 export default Profile;
-
-{ /* <input
-      name={name} value={value}
-      placeholder={capitalize(placeholder)}
-      type={typeChecker(name)}
-      onChange={({target}) => getProfileValues(name, target.value)}
-
-      />  */ }
-{ /* <form onSubmit={(event) => {
-          event.preventDefault();
-          updateProfile();
-        }}> */ }

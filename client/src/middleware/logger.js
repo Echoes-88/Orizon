@@ -9,7 +9,7 @@ import {
   logoutHandler,
 } from '../actions/connexion';
 
-import { saveSession } from '../actions/user';
+import { checkAvatar, saveSession } from '../actions/user';
 
 const logger = (store) => (next) => (action) => {
   switch (action.type) {
@@ -29,6 +29,7 @@ const logger = (store) => (next) => (action) => {
             store.dispatch(saveSession(response.data));
             store.dispatch(loginHandler());
             store.dispatch(loginMessage(response.data.message));
+            store.dispatch(checkAvatar());
           }
           else {
             console.log("c'est pas booooon");

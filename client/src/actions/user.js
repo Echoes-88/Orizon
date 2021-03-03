@@ -4,6 +4,16 @@ export const UPDATE_SESSION = 'UPDATE_SESSION';
 export const CHECK_IS_LOGGED = 'CHECK_IS_LOGGED';
 export const HANDLE_CHECK_LOGGED = 'HANDLE_CHECK_LOGGED';
 export const UPDATE_SESSION_QUIZ = 'UPDATE_SESSION_QUIZ';
+export const CHECK_AVATAR = 'CHECK_AVATAR';
+export const HAS_AVATAR = 'HAS_AVATAR';
+
+export const checkAvatar = () => ({
+  type: CHECK_AVATAR,
+});
+
+export const hasAvatar = () => ({
+  type: HAS_AVATAR,
+})
 
 export const updateProfile = () => ({
   type: UPDATE_PROFILE,
