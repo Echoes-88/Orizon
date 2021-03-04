@@ -13,6 +13,10 @@ const crudController = {
 		const entity = req.params.entity;
 		const TargetModel = getModelFromName(entity);
 
+		if(req.params.entity === 'user') {
+			res.status(404).json({error: `access forbidden`});
+		}
+
 		if(!TargetModel) {
 			res.status(404).json({error: `Model ${entity} not found`});
 		} else {
@@ -27,6 +31,10 @@ const crudController = {
 	getOne: async(req, res) => {
 		const {entity, id} = req.params;
 		const TargetModel = getModelFromName(entity);
+		console.log(id)
+		if((entity === 'user') && (id != req.session.user.id)) {
+			res.status(404).json({error: `access forbidden`});
+		}
 
 		if(!TargetModel) {
 			res.status(404).json({error: `Model ${entity} not found`});

@@ -15,10 +15,7 @@ const getFullQuiz = (store) => (next) => (action) => {
           store.dispatch(saveQuizData(response.data));
           console.log(response.data);
         })
-        .catch((error) => console.log(error))
-        .finally(() =>
-        // This is an indication that the request was carried on, NOT THAT IT WAS SUCCESFUL
-          console.log('Requête pour récupérer les quizzes accomplie'));
+        .catch((error) => console.log(error));
       break;
     }
     // Sends score back to database with user id, quiz id and score
@@ -38,7 +35,7 @@ const getFullQuiz = (store) => (next) => (action) => {
 
           console.log('Score sauvegardé');
         })
-        .catch((error) => console.log(error, 'erreur lors de la sauevegarde des scores'));
+        .catch((error) => console.log(error));
       break;
     }
     default:

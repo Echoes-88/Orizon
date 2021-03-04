@@ -1,7 +1,7 @@
 const User = require("../models/user.js");
 const bcrypt = require("bcrypt");
 const MailChecker = require("mailchecker");
-
+const jwt = require("jsonwebtoken");
 
 const authController = {
 
@@ -41,10 +41,24 @@ const authController = {
 					email: user.email,
 					id: user.id,
 					idString: idString,
-					quiz: user.userPLAYEDquiz, 
+					quiz: user.userPLAYEDquiz,
 				};
 
-				res.send({ logged: true, message: `Vous êtes connecté.e ${user.username}, bon voyage !`, username: user.username, lastname: user.lastname, firstname: user.firstname, email: user.email, id: user.id, idString: idString, quiz: user.userPLAYEDquiz });
+				res.send({ 
+					logged: true, message: `Vous êtes connecté.e ${user.username}, bon voyage !`, 
+					username: user.username, 
+					lastname: user.lastname, 
+					firstname: user.firstname, 
+					email: user.email, 
+					id: user.id, 
+					idString: idString, 
+					quiz: user.userPLAYEDquiz,
+					token: jwt.sign(
+						{ userId: user.id },
+						process.env.TOKEN_SECRET,
+						{ expiresIn: '24h' }
+					) 
+				});
 			}
 
 		}
