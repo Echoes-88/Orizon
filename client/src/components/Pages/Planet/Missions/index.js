@@ -67,7 +67,7 @@ const Missions = ({ missions }) => {
     <>
       <div className="missions__body">
         {missions.map((elt) => (
-          <div className="missions__body__container" id={`${elt.mission_name.replace(/[^a-zA-Z0-9]/g, '_')}-${elt.id}`}>
+          <div key={elt.mission_name} className="missions__body__container" id={`${elt.mission_name.replace(/[^a-zA-Z0-9]/g, '_')}-${elt.id}`}>
             <div className="missions__header">
               <div className="missions__image__container">
                 <img className="missions__image" alt={elt.mission_name} src={imgLinkConverter(elt.picture_link)} />

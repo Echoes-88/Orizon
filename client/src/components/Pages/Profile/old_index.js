@@ -1,18 +1,14 @@
 // == React Import
-import React, { useState, useEffect } from 'react';
-
+import React, { useState } from 'react';
+// import classNames from 'classnames';
 import Field from '../../../containers/Field';
-
-import axios from 'axios';
-
-import { adressIp } from '../config';
 
 // == Import
 import './styles.scss';
 
 // == Profile page
 const Profile = ({
-  username, lastname, firstname, email, password, idString, quiz, updateProfile, checkAvatar, hasAvatar
+  username, lastname, firstname, email, password, idString, quiz, updateProfile,
 }) => {
 
   const handleOnSubmit = (event) => {
@@ -20,15 +16,28 @@ const Profile = ({
     updateProfile();
   };
 
+    const avatarUrl = 'http://174.129.9.82:5000/';
+    const uploadUrl = 'http://174.129.9.82:5000/api/upload/';
+
+    const linkConverter = (url) => {
+    let urlConverted;
+    if (url === avatarUrl) {
+      urlConverted = avatarUrl + idString;
+    } else {
+      urlConverted = url + idString;
+    }
+    return urlConverted;
+  };
+
   return (
     <div className="profilepage">
       <div className="profilepage__usercard">
         <div className="profilepage__infos"><div className="form_adjust">
-          {hasAvatar && (
-            <img className="profile_avatar" alt={username} src={`${adressIp}/${idString}`} />
+          {idString && (
+            <img className="profile_avatar" alt={username} src={linkConverter(avatarUrl)} />
           )}
  
-          <form method="POST" action={`${adressIp}/api/upload/${idString}`} encType="multipart/form-data">
+          <form method="POST" action={linkConverter(uploadUrl)} encType="multipart/form-data">
             <label className="fieldLabel"> Image de profil
               <input
                 type="file"
@@ -44,7 +53,7 @@ const Profile = ({
                 > Envoyer
                 </button>
               </div>
-            </label>
+              </label>
           </form>
           </div>
 
@@ -100,7 +109,7 @@ const Profile = ({
               </button>
             </div>
           </form>
-
+          
         </div>
       </div>
       <div className="profilepage__quizresults">
@@ -110,7 +119,7 @@ const Profile = ({
           <>
           {quiz.map((elt) => ( 
 
-          <div className="profilepage__quizresult" key={elt.title}>
+          <div className="profilepage__quizresult">
             <h3 className="profilepage__quizresult__title">{elt.title}</h3>
             <p className="profilepage__quizresult__text">Ton dernier score à ce quiz : {elt.user_plays_quiz.score}/{elt.nbr_of_questions}</p>
             </div>
@@ -126,5 +135,3 @@ const Profile = ({
     </div>
   );
 };
-
-export default Profile;

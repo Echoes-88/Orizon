@@ -103,7 +103,7 @@ Spoutnik.propTypes = {
   toggleSpoutnik: PropTypes.func.isRequired,
   spoutnikSpeaks: PropTypes.bool.isRequired,
   isLogged: PropTypes.bool.isRequired,
-  username: PropTypes.string.isRequired,
+  username: PropTypes.string,
   toggleQuiz: PropTypes.func.isRequired,
   showQuiz: PropTypes.func.isRequired,
   planetName: PropTypes.string.isRequired,

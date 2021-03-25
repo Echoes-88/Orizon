@@ -1,1 +1,1 @@
-export const adressIp = 'http://localhost:5000';
+export const adressIp = 'http://174.129.9.82:5000';

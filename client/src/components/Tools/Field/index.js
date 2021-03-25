@@ -25,10 +25,10 @@ const Field = ({ type, name, placeholder, valueInput, onChange }) => {
 
 Field.propTypes = {
   type: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  placeholder: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
+  name: PropTypes.string,
+  placeholder: PropTypes.string,
+  value: PropTypes.string,
+  onChange: PropTypes.func,
 };
 
 Field.defaultProps = {

@@ -6,6 +6,9 @@ const router = express.Router();
 // Middleware to avoid try/catch in controllers
 const capture = require("./middlewares/captureMiddleware");
 
+// Token middleware
+// const tokenMiddleware = require("./middlewares/tokenMiddleware");
+
 // controllers import
 const crudController = require("./controllers/crudController");
 const handleQuizController = require("./controllers/handleQuizController");

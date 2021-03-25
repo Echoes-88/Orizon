@@ -25,7 +25,7 @@ const News = ({ getNewsDatas, news, toggleNews, indexNews, seeMoreArticles }) =>
         <>
         <div className="card-list">
           {news.map((listNews) => (
-            <New listNews={listNews} />
+            <New listNews={listNews} key={listNews} />
           ))}
         </div>
         <div className="news_see-more">
@@ -45,7 +45,7 @@ const News = ({ getNewsDatas, news, toggleNews, indexNews, seeMoreArticles }) =>
 };
 
 News.propTypes = {
-  news: PropTypes.object.isRequired,
+  news: PropTypes.array.isRequired,
 };
 
 // == Export

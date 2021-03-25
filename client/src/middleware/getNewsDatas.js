@@ -11,7 +11,12 @@ const getNewsDatas = (store) => (next) => (action) => {
       const state = store.getState();
       const { indexNews } = state.news;
 
-      axios.get(`${adressIp}/api/news/${indexNews}`)
+      axios.get(`${adressIp}/api/news/${indexNews}`, {
+        token: state.user.session.token
+      },
+      {
+        withCredentials: true,
+      })
         .then((response) => {
           store.dispatch(newsFromApi(response.data));
           store.dispatch(toggleNews());

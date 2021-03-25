@@ -67,10 +67,14 @@ const App = ({
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/planet/:slug" exact component={Planet} />
+            {isLogged && (
+            <>
             <Route path="/news" exact component={News} />
             <Route path="/profile" exact component={Profile} />
-            <Route path="/signin" exact>
-              {isLogged ? <Redirect to="/" exact /> : <SignIn />}
+            </>
+            )}
+            <Route path="/signin" exact component={SignIn}>
+              {/* {isLogged ? <Redirect to="/" exact /> : <SignIn />} */}
             </Route>
             <Route path="/signup" exact component={SignUp}>
               {hasSignedUp ? <Redirect to="/signin" exact /> : <SignUp />}

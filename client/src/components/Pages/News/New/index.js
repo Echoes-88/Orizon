@@ -10,7 +10,7 @@ const News = ({ listNews }) => (
 
   <>
     {listNews.map((newElt) => (
-      <div className="card card__container">
+      <div key={newElt.title} className="card card__container">
         <div className="card-header">
           <div className="image__article__container">
           <img className="image__article" src={newElt.img} />
@@ -29,7 +29,7 @@ const News = ({ listNews }) => (
   );
 
 News.propTypes = {
-  news: PropTypes.object.isRequired,
+  news: PropTypes.object,
 };
 
 // == Export

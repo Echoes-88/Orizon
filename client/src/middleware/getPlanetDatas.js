@@ -8,14 +8,18 @@ const getPlanetDatas = (store) => (next) => (action) => {
       const state = store.getState();
       const { currentPlanet } = state.planet;
 
-      axios.get(`${adressIp}/api/crud/planet/${currentPlanet}`)
+      axios.get(`${adressIp}/api/crud/planet/${currentPlanet}`, {
+        params: { token: state.user.session.token }
+      })
         .then((response) => {
           store.dispatch(savePlanetInfos(response.data));
         })
         .catch((error) => console.log(error))
         .finally();
 
-      axios.get(`${adressIp}/api/crud/mission`)
+      axios.get(`${adressIp}/api/crud/mission`, {
+        params: { token: state.user.session.token }
+      })
         .then((response) => {
           store.dispatch(savePlanetMissions(response.data));
         })

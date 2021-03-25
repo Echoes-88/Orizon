@@ -34,6 +34,12 @@ const authController = {
 
 				const idString = await user.id.toString();
 
+				const token = jwt.sign(
+					{ userId: user.id },
+					process.env.TOKEN_SECRET,
+					{ expiresIn: '24h' }
+				) 
+
 				req.session.user = {
 					username: user.username,
 					lastname: user.lastname,
@@ -42,6 +48,7 @@ const authController = {
 					id: user.id,
 					idString: idString,
 					quiz: user.userPLAYEDquiz,
+					token: token
 				};
 
 				res.send({ 
@@ -53,12 +60,8 @@ const authController = {
 					id: user.id, 
 					idString: idString, 
 					quiz: user.userPLAYEDquiz,
-					token: jwt.sign(
-						{ userId: user.id },
-						process.env.TOKEN_SECRET,
-						{ expiresIn: '24h' }
-					) 
-				});
+					token: token
+				}); 
 			}
 
 		}
@@ -155,8 +158,7 @@ const authController = {
 	isLogged: async(req, res) => {
 
 		if (req.session.user) {
-
-			res.json({ logged: true, username: req.session.user.username, lastname: req.session.user.lastname, firstname: req.session.user.firstname, email: req.session.user.email, id: req.session.user.id, idString: req.session.user.idString, quiz: req.session.user.quiz });
+			res.json({ logged: true, username: req.session.user.username, lastname: req.session.user.lastname, firstname: req.session.user.firstname, email: req.session.user.email, id: req.session.user.id, idString: req.session.user.idString, quiz: req.session.user.quiz, token: req.session.user.token });
 		}
 		else {
 			res.json({ logged: false });

@@ -9,7 +9,7 @@ const userMiddleware = (store) => (next) => (action) => {
         withCredentials: true,
       }).then((response) => {
         store.dispatch(handleCheckLogged(response.data));
-        store.dispatch(checkAvatar());
+        // store.dispatch(checkAvatar());
         next(action);
       })
         .catch((e) => {

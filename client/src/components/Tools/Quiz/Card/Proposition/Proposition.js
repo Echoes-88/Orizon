@@ -52,7 +52,7 @@ Proposition.propTypes = {
     PropType.shape({
       id: PropType.number.isRequired,
       description: PropType.string.isRequired,
-      question_has_proposition: PropType.arrayOf(
+      question_has_proposition: PropType.objectOf(
         PropType.shape({
           id_question: PropType.number.isRequired,
           id_proposition: PropType.number.isRequired,
@@ -60,7 +60,7 @@ Proposition.propTypes = {
       ),
     }),
   ).isRequired,
-  description: PropType.string.isRequired,
+  description: PropType.string,
   rightAnswerIds: PropType.array.isRequired,
   estViteRepondue: PropType.bool.isRequired,
   addSavedAnswer: PropType.func.isRequired,

@@ -25,6 +25,7 @@ const logger = (store) => (next) => (action) => {
         withCredentials: true,
       })
         .then((response) => {
+
           if (response.data.logged) { 
             store.dispatch(saveSession(response.data));
             store.dispatch(loginHandler());

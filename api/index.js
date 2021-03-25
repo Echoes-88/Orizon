@@ -13,7 +13,7 @@ const express = require("express");
 const app = express();
 
 app.use(bodyParser.json());
-
+/*
 Object.defineProperty(session.Cookie.prototype, 'sameSite', {
 	// sameSite cannot be set to `None` if cookie is not marked secure
 	get() {
@@ -23,7 +23,7 @@ Object.defineProperty(session.Cookie.prototype, 'sameSite', {
 		this._sameSite = value;
 	}
 });
-  
+*/
 // Session
 app.use(session({
 	secret: process.env.APP_SECRET,
@@ -39,12 +39,13 @@ app.use(session({
 // CORS
 app.use((req, res, next) => {
 	// on autorise explicitement le domaine du front
-	res.header("Access-Control-Allow-Origin", "http://localhost:9090");
+	res.header("Access-Control-Allow-Origin", "http://174.129.9.82");
 	// on autorise le partage du cookie
 	res.header("Access-Control-Allow-Credentials", true);
 	// on autorise le partage de ressources entre origines
 	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 	res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE, PATCH");
+	// res.header("Cross-Origin-Resource-Policy: same-site")
 
 	next();
 });

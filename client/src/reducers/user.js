@@ -32,6 +32,7 @@ export const initialState = {
     idString: null,
     id: null,
     quiz: null,
+    token: null,
   },
 };
 
@@ -83,6 +84,7 @@ const User = (state = initialState, action = {}) => {
           id: action.datas.id,
           idString: action.datas.idString,
           quiz: action.datas.quiz,
+          token: action.datas.token,
         },
         temporary: {
           username: action.datas.username,
@@ -131,6 +133,7 @@ const User = (state = initialState, action = {}) => {
           id: action.datas.id,
           idString: action.datas.idString,
           quiz: action.datas.quiz,
+          token: action.datas.token
         },
         temporary: {
           username: action.datas.username,

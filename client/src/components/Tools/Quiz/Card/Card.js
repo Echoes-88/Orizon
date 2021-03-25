@@ -99,7 +99,7 @@ Card.propTypes = {
     PropType.shape({
       id: PropType.number.isRequired,
       description: PropType.string.isRequired,
-      proposition_confirms_question: PropType.number.isRequired,
+      proposition_confirms_question: PropType.number,
     }),
   ).isRequired,
   propositions: PropType.arrayOf(
@@ -108,14 +108,14 @@ Card.propTypes = {
       description: PropType.string.isRequired,
       question_has_proposition: PropType.objectOf(
         PropType.shape({
-          id_question: PropType.number.isRequired,
-          id_proposition: PropType.number.isRequired,
+          id_question: PropType.number,
+          id_proposition: PropType.number,
         }),
       ).isRequired,
     }),
   ).isRequired,
   wiki: PropType.string,
-  description: PropType.string.isRequired,
+  description: PropType.string,
   increaseScore: PropType.func.isRequired,
   nextQuestion: PropType.func.isRequired,
   isLastQuestion: PropType.bool.isRequired,

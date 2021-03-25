@@ -17,6 +17,7 @@ const sendProfile = (store) => (next) => (action) => {
         firstname: state.user.temporary.firstname,
         email: state.user.temporary.email,
         password: state.user.temporary.password,
+        token: state.user.session.token
       })
         .then((response) => {
           store.dispatch(updateSession(response.data));
@@ -31,7 +32,7 @@ const sendProfile = (store) => (next) => (action) => {
     case CHECK_AVATAR: {
       const state = store.getState();
       const idString = state.user.session.idString;
-      console.log("idstring :", idString)
+
       axios.get(`${adressIp}/${idString}`)
         .then((response) => {
           store.dispatch(hasAvatar());

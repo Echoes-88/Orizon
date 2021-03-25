@@ -1,5 +1,6 @@
 const models = require("../models");
 const User = require("../models/user.js");
+const jwt = require("jsonwebtoken");
 
 // UpperCase firstletter of entity to fit with Model case
 const getModelFromName = (name) => {
@@ -13,43 +14,75 @@ const crudController = {
 		const entity = req.params.entity;
 		const TargetModel = getModelFromName(entity);
 
-		if(req.params.entity === 'user') {
-			res.status(404).json({error: `access forbidden`});
+		const { token } = req.query;
+
+		if (!token) {
+      return res.status(401).json({ message: 'Error. Need a token' })
+  	}
+
+		const decoded = jwt.verify(token, process.env.TOKEN_SECRET);
+
+
+
+		// jwt.verify(token, process.env.TOKEN_SECRET, (err, decodedToken) => {
+    //   if (err) {
+    //       res.status(401).json({ message: 'Error. Bad token' })
+    //   } else {
+    //       console.log("coucou")
+    //   }
+  	// })
+
+		if(decoded) {
+
+			if(!TargetModel) {
+				res.status(404).json({error: `Model ${entity} not found`});
+			} else {
+				const allInstances = await TargetModel.findAll({
+					include: {all:true}
+				});
+
+				res.json(allInstances);
+			}
 		}
 
-		if(!TargetModel) {
-			res.status(404).json({error: `Model ${entity} not found`});
-		} else {
-			const allInstances = await TargetModel.findAll({
-				include: {all:true}
-			});
-
-			res.json(allInstances);
-		}
 	},
 
 	getOne: async(req, res) => {
 		const {entity, id} = req.params;
 		const TargetModel = getModelFromName(entity);
-		console.log(id)
-		if((entity === 'user') && (id != req.session.user.id)) {
-			res.status(404).json({error: `access forbidden`});
-		}
 
-		if(!TargetModel) {
-			res.status(404).json({error: `Model ${entity} not found`});
-		} else {
-			const instance = await TargetModel.findByPk(id, {
-				nested: true,
-				include: {all:true}
-			});
+		const { token } = req.query;
+		
+		if (!token) {
+      return res.status(401).json({ message: 'Error. Need a token' })
+  	}
 
-			if(instance) {
-				res.json(instance);
-			} else {
-				res.status(404).json({error: `Id not found for Model ${entity}`});
+		const decoded = jwt.verify(token, process.env.TOKEN_SECRET);
+
+		if(decoded) {
+
+			if((entity === 'user') && (id != req.session.user.id)) {
+				res.status(403).json({error: `access forbidden`});
 			}
+	
+			if(!TargetModel) {
+				res.status(404).json({error: `Model ${entity} not found`});
+			} else {
+				const instance = await TargetModel.findByPk(id, {
+					nested: true,
+					include: {all:true}
+				});
+	
+				if(instance) {
+					res.json(instance);
+				} else {
+					res.status(404).json({error: `Id not found for Model ${entity}`});
+				}
+			}
+
 		}
+
+
 	},
 
 	createOne: async(req, res) => {
