@@ -1,0 +1,1 @@
+export const adressIp = 'http://174.129.9.8/:5000';

@@ -16,8 +16,8 @@ const Profile = ({
     updateProfile();
   };
 
-    const avatarUrl = 'http://localhost:5000/';
-    const uploadUrl = 'http://localhost:5000/api/upload/';
+    const avatarUrl = 'http://174.129.9.82:5000/';
+    const uploadUrl = 'http://174.129.9.82:5000/api/upload/';
 
     const linkConverter = (url) => {
     let urlConverted;
