@@ -3,6 +3,12 @@ export const GET_PLANET_DATAS = 'GET_PLANET_DATAS';
 export const SAVE_PLANET_INFOS = 'SAVE_PLANET_INFOS';
 export const SAVE_PLANET_MISSIONS = 'SAVE_PLANET_MISSIONS';
 export const TOGGLE_PLANET = 'TOGGLE_PLANET';
+export const SET_PLANET_TRUE = 'SET_PLANET_TRUE';
+
+export const setPlanetTrue = () => ({
+  type: SET_PLANET_TRUE,
+});
+
 
 export const displayPlanet = () => ({
   type: DISPLAY_PLANET,

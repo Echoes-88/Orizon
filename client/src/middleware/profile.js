@@ -22,10 +22,10 @@ const sendProfile = (store) => (next) => (action) => {
         .then((response) => {
           store.dispatch(updateSession(response.data));
         })
-        .catch((error) => console.log(error))
-        .finally(() =>
+        .catch((error) => console.log(error));
+        // .finally(() =>
         // This is an indication that the request was carried on, NOT THAT IT WAS SUCCESFUL
-          console.log('Requête pour récupérer les quizzes accomplie'));
+        // console.log('Requête pour récupérer les quizzes accomplie'));
       break;
     }
 

@@ -32,7 +32,7 @@ import './styles.scss';
 
 // == App Component
 const App = ({
-  checkIsLogged, isLogged, hasSignedUp, isPlanetDisplayed, currentPlanetName,
+  checkIsLogged, isLogged, hasSignedUp, isPlanetDisplayed, currentPlanetName, getPlanetDatas
 }) => {
 // burger menu
   const [openBurger, setOpenBurger] = useState(
@@ -42,7 +42,6 @@ const App = ({
     window.matchMedia('(min-width:750px)').matches,
   );
   // end burger menu
-
   useEffect(() => {
     window.addEventListener('resize', () => {
       setOpenBurger(window.matchMedia('(max-width:1000px)').matches);

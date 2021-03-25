@@ -5,7 +5,7 @@ import Field from '../../../containers/Field';
 
 import axios from 'axios';
 
-import { adressIp } from '../config';
+import { adressIp } from '../../../config';
 
 // == Import
 import './styles.scss';

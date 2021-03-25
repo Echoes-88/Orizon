@@ -1,5 +1,5 @@
 import {
-  SAVE_PLANET_INFOS, SAVE_PLANET_MISSIONS, TOGGLE_PLANET, DISPLAY_PLANET,
+  SAVE_PLANET_INFOS, SAVE_PLANET_MISSIONS, TOGGLE_PLANET, DISPLAY_PLANET, SET_PLANET_TRUE
 } from '../actions/planet';
 
 export const initialState = {
@@ -14,6 +14,12 @@ export const initialState = {
 
 const data = (state = initialState, action = {}) => {
   switch (action.type) {
+   case SET_PLANET_TRUE:
+     return {
+     ...state,
+     isPlanetDisplayed: true,
+    }
+
     case DISPLAY_PLANET:
       return {
         ...state,

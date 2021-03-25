@@ -14,13 +14,13 @@ const crudController = {
 		const entity = req.params.entity;
 		const TargetModel = getModelFromName(entity);
 
-		const { token } = req.query;
+		//const { token } = req.query;
 
-		if (!token) {
-      return res.status(401).json({ message: 'Error. Need a token' })
-  	}
+		//if (!token) {
+      //return res.status(401).json({ message: 'Error. Need a token' })
+  	//}
 
-		const decoded = jwt.verify(token, process.env.TOKEN_SECRET);
+		//const decoded = jwt.verify(token, process.env.TOKEN_SECRET);
 
 
 
@@ -32,7 +32,7 @@ const crudController = {
     //   }
   	// })
 
-		if(decoded) {
+		//if(decoded) {
 
 			if(!TargetModel) {
 				res.status(404).json({error: `Model ${entity} not found`});
@@ -43,7 +43,7 @@ const crudController = {
 
 				res.json(allInstances);
 			}
-		}
+		//}
 
 	},
 
@@ -51,15 +51,15 @@ const crudController = {
 		const {entity, id} = req.params;
 		const TargetModel = getModelFromName(entity);
 
-		const { token } = req.query;
+		//const { token } = req.query;
 		
-		if (!token) {
-      return res.status(401).json({ message: 'Error. Need a token' })
-  	}
+		//if (!token) {
+      //return res.status(401).json({ message: 'Error. Need a token' })
+  	//}
 
-		const decoded = jwt.verify(token, process.env.TOKEN_SECRET);
+		//const decoded = jwt.verify(token, process.env.TOKEN_SECRET);
 
-		if(decoded) {
+		//if(decoded) {
 
 			if((entity === 'user') && (id != req.session.user.id)) {
 				res.status(403).json({error: `access forbidden`});
@@ -80,7 +80,7 @@ const crudController = {
 				}
 			}
 
-		}
+		//}
 
 
 	},

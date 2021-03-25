@@ -12,8 +12,17 @@ const session = require("express-session");
 const express = require("express");
 const app = express();
 
+
+const rateLimit = require("express-rate-limit");
+app.use(rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 300 // limit each IP to 100 requests per windowMs
+}));
+
+
+
 app.use(bodyParser.json());
-/*
+
 Object.defineProperty(session.Cookie.prototype, 'sameSite', {
 	// sameSite cannot be set to `None` if cookie is not marked secure
 	get() {
@@ -23,7 +32,7 @@ Object.defineProperty(session.Cookie.prototype, 'sameSite', {
 		this._sameSite = value;
 	}
 });
-*/
+
 // Session
 app.use(session({
 	secret: process.env.APP_SECRET,

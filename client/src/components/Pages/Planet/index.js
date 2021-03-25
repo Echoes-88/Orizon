@@ -17,11 +17,12 @@ import { hideQuiz } from '../../../actions/quiz';
 
 // == Composant
 const Planet = ({
-  getPlanetDatas, planetInfos, planetMissions, hideQuiz, displayPlanet, currentPlanet,
-}) => {
+  getPlanetDatas, planetInfos, planetMissions, hideQuiz, displayPlanet, currentPlanet, userSession, checkIsLogged, setPlanetTrue
+}) =>  {
+
   useEffect(() => {
     displayPlanet();
-    getPlanetDatas();
+    getPlanetDatas();     
     window.addEventListener('scroll', () => {
       document.querySelectorAll('.missions__body__container').forEach(
         (element) => {

@@ -27,7 +27,7 @@ const uploadController = {
 				return res.end("Error uploading file.");
             }
 
-			res.redirect('http://localhost:9090/profile');
+			res.redirect('http://174.129.9.82/profile');
 		});
     },
 };
